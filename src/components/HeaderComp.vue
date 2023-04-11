@@ -1,7 +1,7 @@
 <template>
-  <v-app-bar app class="header">
-    <v-text-field solo label="Search" prepend-inner-icon="mdi-file-document-box-search-outline" dense clearable
-      hide-details></v-text-field>
+  <v-app-bar app class="header pt-6">
+    <v-text-field label="Search" prepend-inner-icon="mdi-magnify" clearable
+    variant="outlined"></v-text-field>
   </v-app-bar>
 </template>
 
