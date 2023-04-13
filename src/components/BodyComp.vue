@@ -9,7 +9,7 @@
     </div>
 
     <v-pagination v-if="pageCount" class="mt-10" v-model="currPage" :length="pageCount" :total-visible="6"></v-pagination>
-    
+
     <v-dialog v-model="showModal" width="auto">
       <v-card class="pa-6">
         <v-card-title class="text-h4">
@@ -17,7 +17,9 @@
         </v-card-title>
         <v-card-text>
           {{ activeItem.name }}
+          <SocialLinks :links="activeItem.links"></SocialLinks> 
         </v-card-text>
+
         <v-spacer></v-spacer>
         <v-btn color="green-darken-1" variant="text" @click="showModal = false">
           Close
@@ -32,6 +34,8 @@
 import { watch, reactive, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { globalStore } from '@/store/index'
+
+import SocialLinks from './SocialLinks.vue';
 
 const store = globalStore()
 const { getSearch } = store
