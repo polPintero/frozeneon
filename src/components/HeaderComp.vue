@@ -1,15 +1,34 @@
 <template>
   <v-app-bar app class="header pt-6">
-    <v-text-field label="Search" prepend-inner-icon="mdi-magnify" clearable
-    variant="outlined"></v-text-field>
+    <v-text-field
+      v-model="searchString"
+      label="Search"
+      prepend-inner-icon="mdi-magnify"
+      clearable
+      variant="outlined"
+    ></v-text-field>
   </v-app-bar>
 </template>
 
-<script>
-export default {
-  name: "HeaderComp",
-};
+<script setup>
+import {watch} from 'vue'
+import {storeToRefs} from 'pinia'
+import {globalStore} from '@/store/index'
+
+const store = globalStore()
+const {getSearch} = store
+const {searchString} = storeToRefs(store)
+
+let timeout = null
+
+watch(searchString, () => {
+  clearTimeout(timeout)
+  timeout = setTimeout(async () => {
+    await getSearch()
+  }, 200)
+})
 </script>
+
 <style lang="scss">
 .header {
   .v-toolbar__content {
