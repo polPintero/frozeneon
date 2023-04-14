@@ -15,6 +15,8 @@ const iconList = {
   default: "mdi-home",
   npm: "mdi-npm",
   bugs: "mdi-bug",
+  phone: 'mdi-phone',
+  email: 'mdi-gmail',
 }
 
 function getIcon (key) {
