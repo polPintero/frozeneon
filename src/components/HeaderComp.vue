@@ -1,6 +1,6 @@
 <template>
   <v-app-bar class="header pt-6">
-    <v-text-field v-model="searchString" label="Search" prepend-inner-icon="mdi-magnify" clearable
+    <v-text-field v-model="searchString" label="Search" prepend-inner-icon="mdi-magnify" clearable color="primary"
       variant="outlined"></v-text-field>
   </v-app-bar>
 </template>

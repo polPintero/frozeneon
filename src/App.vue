@@ -1,8 +1,8 @@
 <template>
-  <v-app class="pa-6 pt-10">
-      <HeaderComp></HeaderComp>
-      <BodyComp></BodyComp>
-      <FooterComp></FooterComp>
+  <v-app>
+    <HeaderComp></HeaderComp>
+    <BodyComp></BodyComp>
+    <FooterComp></FooterComp>
   </v-app>
 </template>
 

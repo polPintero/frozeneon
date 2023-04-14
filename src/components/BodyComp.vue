@@ -15,7 +15,7 @@
 
     <v-pagination v-if="pageCount" class="mt-10" v-model="currPage" :length="pageCount" :total-visible="6"></v-pagination>
 
-    <v-dialog v-model="showModal" width="auto">
+    <v-dialog v-model="showModal" max-width="70%" width="auto">
       <v-card class="pa-6">
         <v-card-title class="text-h4">
           {{ activeItem.name }}
@@ -60,6 +60,10 @@ function setActiveItem (item) {
 
 <style lang="scss">
 .v-body {
+  &.v-main {
+    padding-top: 110px;
+    flex-grow: 12;
+  }
   &__content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

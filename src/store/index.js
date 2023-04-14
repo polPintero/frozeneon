@@ -4,7 +4,7 @@ import api from '@/api'
 
 export const globalStore =  defineStore('global', () => {
     const packagesList = reactive([])
-    const searchString = ref('vu')
+    const searchString = ref('')
     const pageCount = ref(0)
     const currPage = ref(1)
     const viewLength = 10
