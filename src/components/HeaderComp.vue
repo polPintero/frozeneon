@@ -1,23 +1,18 @@
 <template>
-  <v-app-bar app class="header pt-6">
-    <v-text-field
-      v-model="searchString"
-      label="Search"
-      prepend-inner-icon="mdi-magnify"
-      clearable
-      variant="outlined"
-    ></v-text-field>
+  <v-app-bar class="header pt-6">
+    <v-text-field v-model="searchString" label="Search" prepend-inner-icon="mdi-magnify" clearable
+      variant="outlined"></v-text-field>
   </v-app-bar>
 </template>
 
 <script setup>
-import {watch} from 'vue'
-import {storeToRefs} from 'pinia'
-import {globalStore} from '@/store/index'
+import { watch } from 'vue'
+import { storeToRefs } from 'pinia'
+import { globalStore } from '@/store/index'
 
 const store = globalStore()
-const {getSearch} = store
-const {searchString} = storeToRefs(store)
+const { getSearch } = store
+const { searchString } = storeToRefs(store)
 
 let timeout = null
 
