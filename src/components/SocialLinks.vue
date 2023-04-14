@@ -26,6 +26,8 @@ function getIcon (key) {
 
 <style lang="scss">
 .social-links {
+  margin-top: 10px;
+
   &__item {
     text-decoration: none;
     margin-right: 12px;
