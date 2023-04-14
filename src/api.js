@@ -7,6 +7,9 @@ class API {
     try {
       response = await response.json()
     } catch (err) {
+      response  = {
+        results: []
+      }
       console.log(err)
     }
     return response

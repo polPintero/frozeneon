@@ -17,7 +17,6 @@ export const globalStore =  defineStore('global', () => {
         const response = await api.getSearch(searchString.value, currPage.value)
         calcAmountPages(response.total)
         packagesList.splice(0, packagesList.length, ...response.results)
-        console.log(response.results[0].package)
     }
 
     return { searchString, packagesList, getSearch, pageCount, currPage}

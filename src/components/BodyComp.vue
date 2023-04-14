@@ -50,7 +50,6 @@ let activeItem = reactive({})
 const showModal = ref(false)
 
 watch(currPage, () => getSearch())
-watch(currPage, () => getSearch())
 
 function setActiveItem (item) {
   activeItem = item
