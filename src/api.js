@@ -17,15 +17,26 @@ class API {
 }
 
 class Frozeneon extends API {
+  constructor(domain){
+    super(domain)
+    this.options = {
+      offsetMax: 5000,
+      sizeMax: 250
+    }
+  }
+
   async getSearch(searchString, offset = 0, size = 10) {
     const query = {
       q: searchString,
-      size,
-      from: offset
+      size: size < this.options.sizeMax ? size : this.options.sizeMax,
+      from: offset < this.options.offsetMax ? offset : this.options.offsetMax
     }
     let url = new window.URLSearchParams(query)
     url = this.domain + 'search?' + url.toString()
-    return await this.sendRequest(url)
+    const response = await this.sendRequest(url)
+    const maxTotal = this.options.offsetMax * size
+    response.total =  response.total < maxTotal ? response.total : maxTotal
+    return response
   }
 }
 
